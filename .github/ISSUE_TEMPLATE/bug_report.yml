@@ -1,0 +1,40 @@
+name: Bug report
+description: Report a reproducible problem in Є-Рука
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Problem
+      description: What happened and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: 2.2.0
+  - type: dropdown
+    id: source
+    attributes:
+      label: Active source
+      options: [Camera, Glove, Manual, Startup or settings]
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs and screenshots
+      description: Attach relevant application logs. Remove personal paths or device identifiers if necessary.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Hardware safety
+      options:
+        - label: I disconnected actuator power before changing wiring or reproducing unsafe movement.
+          required: true

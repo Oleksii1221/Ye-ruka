@@ -1,0 +1,10 @@
+{
+  "app.title": "Ye-Ruka",
+  "nav.home": "Home",
+  "nav.auto": "Automatic control",
+  "nav.manual": "Manual control",
+  "nav.calibration": "Calibration",
+  "nav.diagnostics": "Diagnostics",
+  "nav.settings": "Settings",
+  "author": "Author: Kico"
+}

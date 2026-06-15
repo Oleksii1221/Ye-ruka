@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ye-ruka"
+version = "2.2.0"
+description = "Є-Рука — керування роботизованою кистю через камеру, сенсорну рукавицю, ручну панель і Serial"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = {file = "LICENSE"}
+authors = [{name = "Medvid Oleksii (Kico)"}]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Win32 (MS Windows)",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Scientific/Engineering :: Human Machine Interfaces"
+]
+dependencies = [
+  "PySide6>=6.8,<7",
+  "opencv-python>=4.10,<5",
+  "mediapipe>=0.10.35,<0.11",
+  "pyserial>=3.5,<4",
+  "numpy>=1.26,<3",
+  "platformdirs>=4.2,<5"
+]
+
+[project.optional-dependencies]
+build = ["pyinstaller>=6.12,<7", "pillow>=11,<13", "esptool>=4.8,<5"]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+ye-ruka = "ye_ruka.main:main"
+
+[project.urls]
+Homepage = "https://oleksii1221.github.io/Ye-ruka/"
+Repository = "https://github.com/Oleksii1221/Ye-ruka"
+Issues = "https://github.com/Oleksii1221/Ye-ruka/issues"
+Releases = "https://github.com/Oleksii1221/Ye-ruka/releases"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"

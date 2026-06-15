@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Є-Рука — Windows-застосунок для керування роботизованою кистю через ESP32, камеру, жести та сенсорну рукавицю.">
+    <meta name="theme-color" content="#0d1117">
+    <meta property="og:title" content="Є-Рука — керування роботизованою кистю">
+    <meta property="og:description" content="Камера, жести, сенсорна рукавиця, ручне керування й прошивання ESP32 в одному застосунку.">
+    <meta property="og:image" content="assets/app-preview.png">
+    <title>Є-Рука | By Kico</title>
+    <link rel="icon" href="assets/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Є-Рука, на початок">
+        <img src="assets/logo.png" alt="">
+        <span>Є-Рука</span>
+      </a>
+      <nav aria-label="Основна навігація">
+        <a href="#features">Можливості</a>
+        <a href="#start">Підключення</a>
+        <a href="https://github.com/Oleksii1221/Ye-ruka">GitHub</a>
+      </nav>
+      <a class="header-download" data-download href="https://github.com/Oleksii1221/Ye-ruka/releases/latest">Завантажити</a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-image" role="img" aria-label="Інтерфейс застосунку Є-Рука"></div>
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow">РОБОТИЗОВАНА КИСТЬ · WINDOWS 10/11</p>
+          <h1 id="hero-title">Є-Рука</h1>
+          <p class="hero-copy">Керуйте сімома сервоприводами через камеру, жести, сенсорну рукавицю або точну ручну панель. Прошивання ESP32 вже всередині.</p>
+          <div class="hero-actions">
+            <a class="primary-button" data-download href="https://github.com/Oleksii1221/Ye-ruka/releases/latest">
+              <span aria-hidden="true">↓</span>
+              Завантажити для Windows
+            </a>
+            <a class="secondary-button" href="https://github.com/Oleksii1221/Ye-ruka">Відкрити код</a>
+          </div>
+          <p class="release-line"><span data-version>Останній реліз</span> · Windows x64 · Без Python та Arduino IDE</p>
+        </div>
+      </section>
+
+      <section class="signal-band" aria-label="Ключові властивості">
+        <div><strong>7</strong><span>сервоприводів</span></div>
+        <div><strong>2</strong><span>режими прошивки</span></div>
+        <div><strong>3</strong><span>способи керування</span></div>
+        <div><strong>0</strong><span>хмарних залежностей</span></div>
+      </section>
+
+      <section class="section" id="features">
+        <div class="section-heading">
+          <p class="eyebrow dark">МОЖЛИВОСТІ</p>
+          <h2>Одна система від жесту до руху</h2>
+          <p>Застосунок об'єднує комп'ютерний зір, Serial-зв'язок, калібрування та обслуговування механіки.</p>
+        </div>
+        <div class="feature-grid">
+          <article>
+            <span class="feature-index">01</span>
+            <h3>Камера та жести</h3>
+            <p>MediaPipe розпізнає руку, згини пальців і готові жести в реальному часі.</p>
+          </article>
+          <article>
+            <span class="feature-index">02</span>
+            <h3>Ручне керування</h3>
+            <p>Окрема вісь для кожної серви, глобальний стиск і миттєва аварійна зупинка.</p>
+          </article>
+          <article>
+            <span class="feature-index">03</span>
+            <h3>Сенсорна рукавиця</h3>
+            <p>Другий COM-порт, жива індикація каналів і профільне перетворення сенсорів у кути.</p>
+          </article>
+          <article>
+            <span class="feature-index">04</span>
+            <h3>Прошивання ESP32</h3>
+            <p>Робоча й сервісна прошивки встановлюються з інтерфейсу без сторонніх програм.</p>
+          </article>
+          <article>
+            <span class="feature-index">05</span>
+            <h3>Безпечна механіка</h3>
+            <p>Ліміти, нейтральні позиції, швидкісні фільтри й сервісний тест однієї серви.</p>
+          </article>
+          <article>
+            <span class="feature-index">06</span>
+            <h3>Готовий продукт</h3>
+            <p>Українська й англійська мови, три теми, інсталятор, ярлик і деінсталятор.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="dark-section" id="start">
+        <div class="section-heading light">
+          <p class="eyebrow">ШВИДКИЙ СТАРТ</p>
+          <h2>Від завантаження до першого руху</h2>
+        </div>
+        <ol class="steps">
+          <li><span>1</span><div><h3>Встановіть</h3><p>Запустіть інсталятор, виберіть мову, тему й ярлик.</p></div></li>
+          <li><span>2</span><div><h3>Підключіть</h3><p>З'єднайте ESP32 через USB та виберіть її COM-порт.</p></div></li>
+          <li><span>3</span><div><h3>Прошийте</h3><p>Встановіть робочу прошивку на сторінці «Обслуговування».</p></div></li>
+          <li><span>4</span><div><h3>Перевірте</h3><p>Спочатку протестуйте осі без навантаження, потім увімкніть передачу.</p></div></li>
+        </ol>
+        <div class="download-panel">
+          <div>
+            <p class="eyebrow">ГОТОВО ДО РОБОТИ</p>
+            <h2>Завантажте Є-Рука</h2>
+            <p>Інсталятор містить застосунок, моделі розпізнавання, прошивки та інструмент ESP32.</p>
+          </div>
+          <a class="primary-button light-button" data-download href="https://github.com/Oleksii1221/Ye-ruka/releases/latest">
+            <span aria-hidden="true">↓</span>
+            Windows x64
+          </a>
+        </div>
+      </section>
+
+      <section class="requirements">
+        <div>
+          <p class="eyebrow dark">СУМІСНІСТЬ</p>
+          <h2>Що потрібно</h2>
+        </div>
+        <dl>
+          <div><dt>Система</dt><dd>Windows 10 або 11, x64</dd></div>
+          <div><dt>Контролер</dt><dd>ESP32 через USB Serial</dd></div>
+          <div><dt>Серви</dt><dd>7 × DS3225 або сумісні 180°</dd></div>
+          <div><dt>Камера</dt><dd>Опційно, для жестів</dd></div>
+        </dl>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-brand"><img src="assets/logo.png" alt=""><strong>Є-Рука</strong><span>By Kico</span></div>
+      <div class="footer-links">
+        <a href="https://github.com/Oleksii1221/Ye-ruka/blob/master/README.md">Інструкція</a>
+        <a href="privacy.html">Приватність</a>
+        <a href="https://github.com/Oleksii1221/Ye-ruka/blob/master/LICENSE">Ліцензія</a>
+        <a href="https://github.com/Oleksii1221/Ye-ruka/issues">Підтримка</a>
+      </div>
+      <p>© 2026 Medvid Oleksii. Створено в Україні.</p>
+    </footer>
+  </body>
+</html>

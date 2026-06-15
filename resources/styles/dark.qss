@@ -1,0 +1,457 @@
+* {
+    font-family: "Segoe UI Variable", "Segoe UI";
+    font-size: 10pt;
+    outline: none;
+}
+QWidget {
+    color: #EAF0FA;
+    background: transparent;
+}
+QMainWindow, #Root {
+    background: #080B12;
+}
+#Workspace {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #0A0E17, stop:0.55 #0C111C, stop:1 #090D15);
+}
+#TitleBar {
+    background: #0B1019;
+    border-bottom: 1px solid rgba(130, 151, 184, 28);
+}
+#AppIcon {
+    background: rgba(124, 92, 255, 24);
+    border: 1px solid rgba(124, 92, 255, 45);
+    border-radius: 10px;
+    padding: 4px;
+}
+#WindowTitle {
+    font-size: 12pt;
+    font-weight: 700;
+    color: #F8FAFF;
+}
+#WindowSubtitle, #SectionEyebrow {
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #7F8BA2;
+}
+#ProfileChip, #ModeBadge, #StateBadge {
+    background: rgba(124, 92, 255, 22);
+    border: 1px solid rgba(124, 92, 255, 60);
+    border-radius: 10px;
+    color: #B9AAFF;
+    padding: 4px 10px;
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+#StateBadge[state="connected"] {
+    background: rgba(42, 211, 155, 20);
+    border-color: rgba(42, 211, 155, 80);
+    color: #63E6B9;
+}
+#StateBadge[state="error"] {
+    background: rgba(255, 82, 118, 24);
+    border-color: rgba(255, 82, 118, 90);
+    color: #FF7898;
+}
+#WindowButton, #WindowCloseButton {
+    background: transparent;
+    border: 0;
+    border-radius: 8px;
+    padding: 0;
+    color: #AAB4C6;
+    font-size: 12pt;
+}
+#WindowButton:hover {
+    background: rgba(231, 238, 249, 11);
+    color: #FFFFFF;
+}
+#WindowCloseButton:hover {
+    background: #C42B3E;
+    color: white;
+}
+#NavigationRail {
+    background: #090E17;
+    border-right: 1px solid rgba(130, 151, 184, 24);
+}
+#RailStatus {
+    color: #667085;
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 3px 7px;
+}
+#RailStatus[live="true"] {
+    color: #45D8A4;
+}
+#RailAuthor {
+    color: #536075;
+    font-size: 8pt;
+    line-height: 1.3;
+    padding: 6px 7px;
+}
+#CommandBar {
+    background: rgba(9, 14, 23, 210);
+    border-bottom: 1px solid rgba(130, 151, 184, 24);
+}
+#StatusStrip {
+    background: rgba(9, 14, 23, 210);
+    border-top: 1px solid rgba(130, 151, 184, 22);
+}
+#BottomMetric, #MicroText {
+    color: #77849A;
+    font-size: 8pt;
+}
+#PageTitle {
+    font-size: 24pt;
+    font-weight: 650;
+    color: #F7F9FE;
+}
+#PageSubtitle {
+    color: #8995A9;
+    font-size: 10pt;
+}
+#HeroNumber {
+    font-size: 20pt;
+    font-weight: 700;
+    color: #C8BEFF;
+}
+#MetricValue {
+    font-size: 17pt;
+    font-weight: 700;
+    color: #F6F8FD;
+}
+#MetricValueSmall {
+    font-size: 12pt;
+    font-weight: 700;
+    color: #F2F6FC;
+}
+#Surface, #SettingsSurface, #MetricTile, #AmbientSurface, #ControlColumn, #GlassStrip, #MetricStrip {
+    background: rgba(20, 28, 43, 150);
+    border: 1px solid rgba(151, 169, 199, 26);
+    border-radius: 18px;
+}
+#AmbientSurface {
+    background: qradialgradient(cx:0.50, cy:0.42, radius:0.78, fx:0.50, fy:0.42, stop:0 rgba(50, 42, 96, 125), stop:0.48 rgba(18, 28, 45, 170), stop:1 rgba(10, 15, 24, 210));
+    border-color: rgba(124, 92, 255, 45);
+}
+#GlassStrip {
+    background: rgba(20, 29, 45, 115);
+    border-color: rgba(160, 179, 210, 24);
+    border-radius: 15px;
+}
+#SignalDeck, #AxisScroll {
+    background: transparent;
+    border: 0;
+}
+#MetricTile {
+    border-radius: 14px;
+}
+#AxisRow {
+    background: rgba(19, 28, 44, 75);
+    border: 1px solid transparent;
+    border-radius: 13px;
+}
+#AxisRow:hover {
+    background: rgba(26, 37, 57, 145);
+    border-color: rgba(124, 92, 255, 34);
+}
+#AxisName {
+    color: #E8EDF7;
+    font-weight: 600;
+}
+#DirectionBadge {
+    background: rgba(124, 92, 255, 22);
+    border: 1px solid rgba(124, 92, 255, 45);
+    border-radius: 10px;
+    color: #BAAEFF;
+    padding: 4px 8px;
+}
+#VideoFrame {
+    background: #05070C;
+    border: 0;
+    border-radius: 15px;
+    color: #6E798B;
+}
+#VerticalDivider {
+    background: rgba(153, 170, 197, 28);
+}
+QPushButton {
+    background: rgba(37, 48, 69, 145);
+    border: 1px solid rgba(164, 181, 209, 28);
+    border-radius: 10px;
+    color: #E8EDF7;
+    padding: 8px 14px;
+    font-weight: 550;
+}
+QPushButton:hover {
+    background: rgba(49, 63, 91, 180);
+    border-color: rgba(178, 194, 220, 55);
+}
+QPushButton:pressed {
+    background: rgba(28, 37, 55, 200);
+}
+QPushButton:disabled {
+    color: #596579;
+    background: rgba(28, 37, 54, 70);
+}
+QPushButton[accent="true"], QPushButton:checked {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #755CFF, stop:1 #5A7CFF);
+    border-color: rgba(175, 161, 255, 100);
+    color: white;
+}
+QPushButton[accent="true"]:hover, QPushButton:checked:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #846EFF, stop:1 #6889FF);
+}
+QPushButton[danger="true"] {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #D93B5B, stop:1 #B8264A);
+    border-color: rgba(255, 111, 143, 105);
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+#TransmitButton {
+    min-width: 82px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+}
+#RoundButton {
+    padding: 0;
+    border-radius: 17px;
+    font-size: 13pt;
+}
+QLineEdit, QSpinBox, QDoubleSpinBox, QComboBox, QTextEdit, QPlainTextEdit, QTableWidget, QListWidget {
+    background: rgba(8, 13, 22, 150);
+    border: 1px solid rgba(151, 169, 199, 30);
+    border-radius: 10px;
+    color: #EAF0FA;
+    padding: 7px 9px;
+    selection-background-color: #725BFF;
+}
+QLineEdit, QSpinBox, QDoubleSpinBox, QComboBox {
+    min-height: 28px;
+}
+QLineEdit:focus, QSpinBox:focus, QDoubleSpinBox:focus, QComboBox:focus, QTextEdit:focus, QPlainTextEdit:focus {
+    border-color: rgba(124, 92, 255, 135);
+    background: rgba(10, 16, 27, 200);
+}
+#PacketField {
+    font-family: "Cascadia Mono", "Consolas";
+    color: #9EDFFF;
+    background: rgba(5, 10, 18, 145);
+}
+#TerminalOutput {
+    font-family: "Cascadia Mono", "Consolas";
+    color: #B8F7D4;
+    background: #05070C;
+}
+#AngleSpin {
+    min-width: 62px;
+    font-weight: 700;
+}
+QComboBox::drop-down {
+    border: 0;
+    width: 24px;
+}
+QComboBox QAbstractItemView {
+    background: #111827;
+    border: 1px solid #28344A;
+    selection-background-color: #725BFF;
+    padding: 5px;
+}
+QSlider::groove:horizontal {
+    height: 5px;
+    background: rgba(155, 173, 202, 30);
+    border-radius: 2px;
+}
+QSlider::sub-page:horizontal {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #725BFF, stop:1 #22D3EE);
+    border-radius: 2px;
+}
+QSlider::handle:horizontal {
+    width: 16px;
+    height: 16px;
+    margin: -6px 0;
+    border-radius: 8px;
+    background: #F5F7FF;
+    border: 3px solid #725BFF;
+}
+QCheckBox::indicator {
+    width: 17px;
+    height: 17px;
+    border-radius: 5px;
+    border: 1px solid rgba(160, 178, 207, 65);
+    background: rgba(9, 14, 23, 130);
+}
+QCheckBox::indicator:checked {
+    background: #725BFF;
+    border-color: #9B8BFF;
+}
+QScrollArea, QScrollArea > QWidget > QWidget {
+    border: 0;
+    background: transparent;
+}
+QScrollBar:vertical {
+    background: transparent;
+    width: 8px;
+    margin: 2px;
+}
+QScrollBar::handle:vertical {
+    background: rgba(145, 161, 188, 70);
+    min-height: 30px;
+    border-radius: 4px;
+}
+QScrollBar:horizontal {
+    background: transparent;
+    height: 8px;
+}
+QScrollBar::handle:horizontal {
+    background: rgba(145, 161, 188, 70);
+    min-width: 30px;
+    border-radius: 4px;
+}
+QScrollBar::add-line, QScrollBar::sub-line, QScrollBar::add-page, QScrollBar::sub-page {
+    background: transparent;
+    border: 0;
+}
+QHeaderView::section {
+    background: rgba(25, 35, 53, 180);
+    color: #8F9CB0;
+    border: 0;
+    border-bottom: 1px solid rgba(155, 173, 202, 30);
+    padding: 8px;
+    font-size: 8pt;
+    font-weight: 700;
+}
+QTableWidget {
+    gridline-color: rgba(150, 168, 195, 20);
+}
+QTableWidget::item {
+    padding: 5px;
+    border-bottom: 1px solid rgba(150, 168, 195, 15);
+}
+QTabWidget::pane {
+    border: 0;
+    background: transparent;
+}
+QTabBar::tab {
+    background: transparent;
+    color: #7D899D;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    padding: 10px 15px;
+    font-weight: 600;
+}
+QTabBar::tab:hover {
+    color: #DCE3EF;
+}
+QTabBar::tab:selected {
+    color: #BDAFFF;
+    border-bottom-color: #755CFF;
+}
+#GestureRibbon {
+    background: transparent;
+    border: 0;
+    padding: 0;
+}
+#GestureRibbon::item {
+    background: rgba(30, 41, 61, 145);
+    border: 1px solid rgba(155, 173, 202, 30);
+    border-radius: 14px;
+    margin: 5px 4px;
+    padding: 10px 15px;
+}
+#GestureRibbon::item:hover {
+    border-color: rgba(124, 92, 255, 75);
+    background: rgba(42, 53, 78, 180);
+}
+#GestureRibbon::item:selected {
+    background: rgba(124, 92, 255, 45);
+    border-color: rgba(124, 92, 255, 110);
+    color: #D9D2FF;
+}
+QToolTip {
+    background: #151D2C;
+    color: #F4F7FC;
+    border: 1px solid #33415A;
+    border-radius: 6px;
+    padding: 5px;
+}
+QSplitter::handle {
+    background: rgba(148, 164, 191, 20);
+    width: 2px;
+    height: 2px;
+}
+
+#PageScroll, #InspectorScroll, #MeterScroll,
+#PageScroll > QWidget > QWidget,
+#InspectorScroll > QWidget > QWidget,
+#MeterScroll > QWidget > QWidget {
+    background: transparent;
+    border: 0;
+}
+#InspectorDivider {
+    background: rgba(151, 169, 199, 28);
+    border: 0;
+}
+#TrackingState {
+    background: rgba(124, 92, 255, 18);
+    border: 1px solid rgba(124, 92, 255, 55);
+    border-radius: 9px;
+    color: #B9AAFF;
+    padding: 3px 8px;
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+#TrackingState[tracking="active"] {
+    background: rgba(42, 211, 155, 18);
+    border-color: rgba(42, 211, 155, 75);
+    color: #63E6B9;
+}
+#TrackingState[tracking="lost"] {
+    background: rgba(255, 82, 118, 20);
+    border-color: rgba(255, 82, 118, 80);
+    color: #FF7898;
+}
+#ConfidenceBar {
+    background: rgba(155, 173, 202, 24);
+    border: 0;
+    border-radius: 3px;
+}
+#ConfidenceBar::chunk {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #725BFF, stop:1 #22D3EE);
+    border-radius: 3px;
+}
+#SoftButton {
+    background: rgba(30, 41, 61, 105);
+    color: #B7C1D2;
+}
+#CameraWorkspaceSplitter::handle {
+    background: transparent;
+}
+#CameraWorkspaceSplitter::handle:hover {
+    background: rgba(124, 92, 255, 22);
+    border-radius: 3px;
+}
+#MeterContainer {
+    background: transparent;
+}
+#InlineNotice {
+    background: rgba(245, 174, 65, 18);
+    border: 1px solid rgba(245, 174, 65, 65);
+    border-radius: 7px;
+    color: #F4C978;
+    padding: 10px 12px;
+}
+QProgressBar {
+    min-height: 7px;
+    max-height: 7px;
+    background: rgba(155, 173, 202, 24);
+    border: 0;
+    border-radius: 3px;
+}
+QProgressBar::chunk {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #725BFF, stop:1 #22D3EE);
+    border-radius: 3px;
+}
