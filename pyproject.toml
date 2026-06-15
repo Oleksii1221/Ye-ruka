@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ye-ruka"
-version = "2.2.0"
+version = "2.2.1"
 description = "Є-Рука — керування роботизованою кистю через камеру, сенсорну рукавицю, ручну панель і Serial"
 readme = "README.md"
 requires-python = ">=3.11,<3.14"

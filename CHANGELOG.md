@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.2.1 — 2026-06-16
+
+- Added Ubuntu x64 release packaging as a `.tar.gz` archive with launcher and desktop metadata.
+- Added Linux `espflash` bundling so ESP32 firmware installation works in Ubuntu builds.
+- Updated GitHub release automation to publish Windows and Ubuntu artifacts.
+- Updated the website with separate direct download buttons for Windows and Ubuntu.
+
 ## 2.2.0 — 2026-06-15
 
 - Added a dedicated Service page for ESP32 firmware installation and recovery.

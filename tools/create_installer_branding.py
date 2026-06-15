@@ -31,7 +31,7 @@ def build_wizard_image(logo: Image.Image) -> None:
     draw.text((56, 573), "РОБОТИЗОВАНА КИСТЬ", font=font(19, bold=True), fill="#6FB7FF")
     draw.line((56, 629, width - 48, 629), fill="#28364D", width=3)
     draw.text((56, 667), "BY KICO", font=font(22, bold=True), fill="#C8D1E2")
-    draw.text((56, 708), "VERSION 2.2.0", font=font(15), fill="#74839C")
+    draw.text((56, 708), "VERSION 2.2.1", font=font(15), fill="#74839C")
 
     image.resize((164, 314), Image.Resampling.LANCZOS).save(
         OUTPUT / "installer-wizard.bmp"

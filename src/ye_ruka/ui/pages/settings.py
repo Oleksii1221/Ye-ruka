@@ -358,7 +358,7 @@ class SettingsPage(QWidget):
         widget = QWidget()
         layout = QVBoxLayout(widget)
         frame, content = card(name="SettingsSurface")
-        version = QApplication.applicationVersion() or "2.2.0"
+        version = QApplication.applicationVersion() or "2.2.1"
         title = QLabel(f"Є-Рука {version}")
         title.setObjectName("PageTitle")
         content.addWidget(title)

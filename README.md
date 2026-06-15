@@ -8,8 +8,9 @@
   [![Tests](https://img.shields.io/github/actions/workflow/status/Oleksii1221/Ye-ruka/ci.yml?branch=dev&label=tests&style=flat-square)](https://github.com/Oleksii1221/Ye-ruka/actions/workflows/ci.yml)
   [![License](https://img.shields.io/github/license/Oleksii1221/Ye-ruka?style=flat-square)](LICENSE)
   [![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?style=flat-square)](https://github.com/Oleksii1221/Ye-ruka/releases/latest)
+  [![Ubuntu](https://img.shields.io/badge/Ubuntu-22.04%2B-E95420?style=flat-square)](https://github.com/Oleksii1221/Ye-ruka/releases/latest)
 
-  **[Завантажити інсталятор](https://github.com/Oleksii1221/Ye-ruka/releases/latest)** · **[Сайт проєкту](https://oleksii1221.github.io/Ye-ruka/)** · **[Повідомити про проблему](https://github.com/Oleksii1221/Ye-ruka/issues/new/choose)**
+  **[Завантажити Windows](https://github.com/Oleksii1221/Ye-ruka/releases/latest)** · **[Завантажити Ubuntu](https://github.com/Oleksii1221/Ye-ruka/releases/latest)** · **[Сайт проєкту](https://oleksii1221.github.io/Ye-ruka/)** · **[Повідомити про проблему](https://github.com/Oleksii1221/Ye-ruka/issues/new/choose)**
 </div>
 
 ![Інтерфейс Є-Рука](docs/INTERFACE_PREVIEW.png)
@@ -24,16 +25,16 @@
 - сервісний режим для прямого тестування DS3225 від `-90°` до `+90°`;
 - українська й англійська мови, системна, темна та світла теми;
 - аварійна зупинка, безпечні позиції, фільтрація та обмеження швидкості;
-- інсталятор Windows із ярликом, політиками та деінсталятором.
+- інсталятор Windows, portable ZIP і Ubuntu x64 `.tar.gz` збірка.
 
 ## Встановлення
 
 1. Відкрийте [останній реліз](https://github.com/Oleksii1221/Ye-ruka/releases/latest).
-2. Завантажте файл `Ye-Ruka-...-Windows-x64-Setup.exe`.
-3. Запустіть інсталятор і виберіть мову, тему та створення ярлика.
+2. Для Windows завантажте `Ye-Ruka-...-Windows-x64-Setup.exe`.
+3. Для Ubuntu завантажте `Ye-Ruka-...-Ubuntu-x64.tar.gz`, розпакуйте архів і запустіть `start-ye-ruka.sh`.
 4. Підключіть ESP32 через USB і виберіть її COM-порт у застосунку.
 
-Python, Arduino IDE та окремі бібліотеки для готового інсталятора не потрібні.
+Python, Arduino IDE та окремі бібліотеки для готового релізу не потрібні.
 
 ## Перший запуск
 
@@ -70,7 +71,7 @@ python tools/project.py run
 python tools/project.py check
 ```
 
-Повна локальна збірка Windows:
+Повна локальна збірка для поточної ОС:
 
 ```powershell
 python tools/project.py release
@@ -83,7 +84,7 @@ python tools/project.py release
 - `master` містить лише перевірені релізні версії;
 - `dev` є основною гілкою поточної розробки;
 - зміни потрапляють у `master` через pull request після перевірок;
-- реліз позначається тегом `vX.Y.Z`, після чого GitHub Actions збирає інсталятор і ZIP.
+- реліз позначається тегом `vX.Y.Z`, після чого GitHub Actions збирає Windows і Ubuntu артефакти.
 
 Докладніше: [CONTRIBUTING.md](CONTRIBUTING.md) і [GOVERNANCE.md](GOVERNANCE.md).
 
