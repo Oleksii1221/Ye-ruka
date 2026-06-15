@@ -8,13 +8,20 @@ async function loadLatestRelease() {
     if (!response.ok) return;
 
     const release = await response.json();
-    const installer = release.assets?.find((asset) =>
+    const windowsInstaller = release.assets?.find((asset) =>
       /Windows-x64-Setup\.exe$/i.test(asset.name),
     );
-    const target = installer?.browser_download_url || release.html_url;
+    const ubuntuArchive = release.assets?.find((asset) =>
+      /Ubuntu-x64\.tar\.gz$/i.test(asset.name),
+    );
+    const windowsTarget = windowsInstaller?.browser_download_url || release.html_url;
+    const ubuntuTarget = ubuntuArchive?.browser_download_url || release.html_url;
 
-    document.querySelectorAll("[data-download]").forEach((link) => {
-      link.href = target;
+    document.querySelectorAll("[data-download='windows']").forEach((link) => {
+      link.href = windowsTarget;
+    });
+    document.querySelectorAll("[data-download='ubuntu']").forEach((link) => {
+      link.href = ubuntuTarget;
     });
     document.querySelectorAll("[data-version]").forEach((label) => {
       label.textContent = `Версія ${release.tag_name.replace(/^v/, "")}`;

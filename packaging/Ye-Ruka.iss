@@ -1,6 +1,6 @@
 #define AppName "Є-Рука"
 #define AppExeName "Ye-Ruka.exe"
-#define AppVersion "2.2.0"
+#define AppVersion "2.2.1"
 #define AppPublisher "Medvid Oleksii (Kico)"
 #define AppId "{{B7E715A2-38B9-4DAA-9810-705502EF0D3F}"
 
@@ -116,7 +116,7 @@ begin
 
   BrandVersion := TNewStaticText.Create(WizardForm);
   BrandVersion.Parent := WizardForm.WelcomePage;
-  BrandVersion.Caption := 'Є-Рука 2.2.0  |  Windows x64';
+  BrandVersion.Caption := 'Є-Рука 2.2.1  |  Windows x64';
   BrandVersion.Font.Name := 'Segoe UI';
   BrandVersion.Font.Size := 8;
   BrandVersion.Font.Color := $00887B72;

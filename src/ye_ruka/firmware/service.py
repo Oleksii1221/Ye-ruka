@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import queue
 import subprocess
+import sys
 import threading
 import time
 from pathlib import Path
@@ -32,10 +33,11 @@ def flash_arguments(port: str, bundle: Path, baudrate: int = 460800) -> list[str
 
 
 def flasher_path() -> Path:
-    bundled = resource_path("tools", "espflash.exe")
+    executable = "espflash.exe" if sys.platform == "win32" else "espflash"
+    bundled = resource_path("tools", executable)
     if bundled.is_file():
         return bundled
-    return project_root() / "tools" / "espflash" / "espflash.exe"
+    return project_root() / "tools" / "espflash" / executable
 
 
 class FirmwareFlashThread(QThread):

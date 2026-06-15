@@ -1,6 +1,6 @@
 # Ye-Ruka
 
-Ye-Ruka is a Windows application for controlling a seven-servo robotic hand through an ESP32, camera-based gestures, manual controls, or a sensor glove.
+Ye-Ruka is a Windows and Ubuntu application for controlling a seven-servo robotic hand through an ESP32, camera-based gestures, manual controls, or a sensor glove.
 
 **[Download the latest release](https://github.com/Oleksii1221/Ye-ruka/releases/latest)** · **[Project website](https://oleksii1221.github.io/Ye-ruka/)**
 
@@ -12,7 +12,7 @@ Ye-Ruka is a Windows application for controlling a seven-servo robotic hand thro
 - built-in production and service firmware flashing for ESP32;
 - guarded raw DS3225 testing from `-90°` to `+90°`;
 - Ukrainian and English UI with system, dark, and light themes;
-- Windows installer, portable archive, uninstaller, and desktop shortcut.
+- Windows installer, portable archive, Ubuntu x64 archive, uninstaller, and desktop shortcut.
 
 ## Development
 
@@ -25,6 +25,14 @@ python tools/project.py check
 ```
 
 `master` contains stable releases. Active development happens on `dev`. See [CONTRIBUTING.md](CONTRIBUTING.md) for the complete workflow.
+
+## Ubuntu
+
+Download `Ye-Ruka-...-Ubuntu-x64.tar.gz` from the latest release, extract it, and run:
+
+```bash
+./start-ye-ruka.sh
+```
 
 ## License
 

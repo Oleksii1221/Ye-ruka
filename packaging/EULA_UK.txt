@@ -1,5 +1,5 @@
 ЛІЦЕНЗІЙНА УГОДА КІНЦЕВОГО КОРИСТУВАЧА
-Є-Рука 2.2.0
+Є-Рука 2.2.1
 
 Автор: Medvid Oleksii (Kico)
 Copyright (c) 2026 Medvid Oleksii (Kico)

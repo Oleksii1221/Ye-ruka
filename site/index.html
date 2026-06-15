@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Є-Рука — Windows-застосунок для керування роботизованою кистю через ESP32, камеру, жести та сенсорну рукавицю.">
+    <meta name="description" content="Є-Рука — застосунок для Windows та Ubuntu, що керує роботизованою кистю через ESP32, камеру, жести та сенсорну рукавицю.">
     <meta name="theme-color" content="#0d1117">
     <meta property="og:title" content="Є-Рука — керування роботизованою кистю">
     <meta property="og:description" content="Камера, жести, сенсорна рукавиця, ручне керування й прошивання ESP32 в одному застосунку.">
@@ -24,7 +24,7 @@
         <a href="#start">Підключення</a>
         <a href="https://github.com/Oleksii1221/Ye-ruka">GitHub</a>
       </nav>
-      <a class="header-download" data-download href="https://github.com/Oleksii1221/Ye-ruka/releases/download/v2.2.0/Ye-Ruka-2.2.0-Windows-x64-Setup.exe">Завантажити</a>
+      <a class="header-download" data-download="windows" href="https://github.com/Oleksii1221/Ye-ruka/releases/download/v2.2.1/Ye-Ruka-2.2.1-Windows-x64-Setup.exe">Завантажити</a>
     </header>
 
     <main id="top">
@@ -32,17 +32,21 @@
         <div class="hero-image" role="img" aria-label="Інтерфейс застосунку Є-Рука"></div>
         <div class="hero-shade"></div>
         <div class="hero-content">
-          <p class="eyebrow">РОБОТИЗОВАНА КИСТЬ · WINDOWS 10/11</p>
+          <p class="eyebrow">РОБОТИЗОВАНА КИСТЬ · WINDOWS 10/11 · UBUNTU 22.04+</p>
           <h1 id="hero-title">Є-Рука</h1>
           <p class="hero-copy">Керуйте сімома сервоприводами через камеру, жести, сенсорну рукавицю або точну ручну панель. Прошивання ESP32 вже всередині.</p>
           <div class="hero-actions">
-            <a class="primary-button" data-download href="https://github.com/Oleksii1221/Ye-ruka/releases/download/v2.2.0/Ye-Ruka-2.2.0-Windows-x64-Setup.exe">
+            <a class="primary-button" data-download="windows" href="https://github.com/Oleksii1221/Ye-ruka/releases/download/v2.2.1/Ye-Ruka-2.2.1-Windows-x64-Setup.exe">
               <span aria-hidden="true">↓</span>
               Завантажити для Windows
             </a>
+            <a class="secondary-button" data-download="ubuntu" href="https://github.com/Oleksii1221/Ye-ruka/releases/download/v2.2.1/Ye-Ruka-2.2.1-Ubuntu-x64.tar.gz">
+              <span aria-hidden="true">↓</span>
+              Ubuntu x64
+            </a>
             <a class="secondary-button" href="https://github.com/Oleksii1221/Ye-ruka">Відкрити код</a>
           </div>
-          <p class="release-line"><span data-version>Останній реліз</span> · Windows x64 · Без Python та Arduino IDE</p>
+          <p class="release-line"><span data-version>Останній реліз</span> · Windows x64 / Ubuntu x64 · Без Python та Arduino IDE</p>
         </div>
       </section>
 
@@ -108,12 +112,18 @@
           <div>
             <p class="eyebrow">ГОТОВО ДО РОБОТИ</p>
             <h2>Завантажте Є-Рука</h2>
-            <p>Інсталятор містить застосунок, моделі розпізнавання, прошивки та інструмент ESP32.</p>
+            <p>Реліз містить застосунок, моделі розпізнавання, прошивки та інструмент ESP32 для Windows і Ubuntu.</p>
           </div>
-          <a class="primary-button light-button" data-download href="https://github.com/Oleksii1221/Ye-ruka/releases/download/v2.2.0/Ye-Ruka-2.2.0-Windows-x64-Setup.exe">
-            <span aria-hidden="true">↓</span>
-            Windows x64
-          </a>
+          <div class="download-buttons">
+            <a class="primary-button light-button" data-download="windows" href="https://github.com/Oleksii1221/Ye-ruka/releases/download/v2.2.1/Ye-Ruka-2.2.1-Windows-x64-Setup.exe">
+              <span aria-hidden="true">↓</span>
+              Windows x64
+            </a>
+            <a class="secondary-button light-secondary" data-download="ubuntu" href="https://github.com/Oleksii1221/Ye-ruka/releases/download/v2.2.1/Ye-Ruka-2.2.1-Ubuntu-x64.tar.gz">
+              <span aria-hidden="true">↓</span>
+              Ubuntu x64
+            </a>
+          </div>
         </div>
       </section>
 
@@ -123,7 +133,7 @@
           <h2>Що потрібно</h2>
         </div>
         <dl>
-          <div><dt>Система</dt><dd>Windows 10 або 11, x64</dd></div>
+          <div><dt>Система</dt><dd>Windows 10/11 x64 або Ubuntu 22.04+ x64</dd></div>
           <div><dt>Контролер</dt><dd>ESP32 через USB Serial</dd></div>
           <div><dt>Серви</dt><dd>7 × DS3225 або сумісні 180°</dd></div>
           <div><dt>Камера</dt><dd>Опційно, для жестів</dd></div>

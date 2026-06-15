@@ -6,6 +6,7 @@ import shutil
 import subprocess
 import sys
 import tomllib
+import stat
 from pathlib import Path
 
 
@@ -94,7 +95,7 @@ def copy_distribution_docs() -> None:
         shutil.copy2(ROOT / relative, target / Path(relative).name)
 
 
-def build_exe() -> None:
+def build_app() -> None:
     python = require_venv()
     run(python, ROOT / "tools/download_models.py")
     run(python, ROOT / "tools/download_espflash.py")
@@ -104,7 +105,12 @@ def build_exe() -> None:
     run(python, "-m", "PyInstaller", "--noconfirm", "--clean", "packaging/Ye-Ruka.spec")
     copy_distribution_docs()
     run(python, ROOT / "tools/collect_licenses.py")
-    print(f"Application: {ROOT / 'dist/Ye-Ruka/Ye-Ruka.exe'}")
+    executable = ROOT / "dist/Ye-Ruka" / ("Ye-Ruka.exe" if os.name == "nt" else "Ye-Ruka")
+    print(f"Application: {executable}")
+
+
+def build_exe() -> None:
+    build_app()
 
 
 def create_portable() -> None:
@@ -117,6 +123,43 @@ def create_portable() -> None:
     remove_path(archive)
     shutil.make_archive(str(archive.with_suffix("")), "zip", ROOT / "dist", "Ye-Ruka")
     print(f"Portable archive: {archive}")
+
+
+def create_linux_archive() -> None:
+    source = ROOT / "dist/Ye-Ruka/Ye-Ruka"
+    if not source.is_file():
+        raise SystemExit("Linux application build not found. Run build-app first on Linux.")
+    release = ROOT / "dist/release"
+    release.mkdir(parents=True, exist_ok=True)
+    package_root = ROOT / "dist/Ye-Ruka"
+    launcher = package_root / "start-ye-ruka.sh"
+    launcher.write_text(
+        "#!/usr/bin/env sh\n"
+        "set -eu\n"
+        "APP_DIR=$(CDPATH= cd -- \"$(dirname -- \"$0\")\" && pwd)\n"
+        "exec \"$APP_DIR/Ye-Ruka\" \"$@\"\n",
+        encoding="utf-8",
+    )
+    desktop = package_root / "ye-ruka.desktop"
+    desktop.write_text(
+        "[Desktop Entry]\n"
+        "Type=Application\n"
+        "Name=Є-Рука\n"
+        "Comment=Robotic hand controller by Kico\n"
+        "Exec=sh -c '\"$(dirname \"%k\")/start-ye-ruka.sh\"'\n"
+        "Icon=ye-ruka\n"
+        "Terminal=false\n"
+        "Categories=Utility;Education;Science;\n",
+        encoding="utf-8",
+    )
+    for executable in (source, launcher):
+        mode = executable.stat().st_mode
+        executable.chmod(mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
+    archive_base = release / f"Ye-Ruka-{version()}-Ubuntu-x64"
+    archive = archive_base.with_suffix(".tar.gz")
+    remove_path(archive)
+    shutil.make_archive(str(archive_base), "gztar", ROOT / "dist", "Ye-Ruka")
+    print(f"Ubuntu archive: {archive}")
 
 
 def find_inno_setup() -> Path:
@@ -143,9 +186,12 @@ def build_installer() -> None:
 
 
 def release() -> None:
-    build_exe()
-    create_portable()
-    build_installer()
+    build_app()
+    if os.name == "nt":
+        create_portable()
+        build_installer()
+    else:
+        create_linux_archive()
     run(require_venv(), ROOT / "tools/write_release_checksums.py")
     print(f"Release: {ROOT / 'dist/release'}")
 
@@ -179,7 +225,9 @@ def main() -> None:
             "check",
             "clean",
             "build-exe",
+            "build-app",
             "portable",
+            "linux-archive",
             "installer",
             "release",
             "reset-settings",
@@ -193,7 +241,9 @@ def main() -> None:
         "check": check,
         "clean": clean,
         "build-exe": build_exe,
+        "build-app": build_app,
         "portable": create_portable,
+        "linux-archive": create_linux_archive,
         "installer": build_installer,
         "release": release,
         "reset-settings": reset_settings,

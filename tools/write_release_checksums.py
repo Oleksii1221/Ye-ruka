@@ -1,12 +1,13 @@
 from __future__ import annotations
 
 import hashlib
+import os
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 RELEASE_DIR = ROOT / "dist" / "release"
-CHECKSUM_FILE = RELEASE_DIR / "SHA256SUMS.txt"
+CHECKSUM_FILE = RELEASE_DIR / os.environ.get("RELEASE_CHECKSUM_FILE", "SHA256SUMS.txt")
 
 
 def sha256(path: Path) -> str:
@@ -18,11 +19,13 @@ def sha256(path: Path) -> str:
 
 
 def main() -> None:
-    artifacts = sorted(
-        path
-        for path in RELEASE_DIR.iterdir()
-        if path.is_file() and path.suffix.lower() in {".exe", ".zip"}
-    )
+    artifacts = []
+    for path in sorted(RELEASE_DIR.iterdir()):
+        if not path.is_file():
+            continue
+        name = path.name.lower()
+        if name.endswith((".exe", ".zip", ".tar.gz")):
+            artifacts.append(path)
     if not artifacts:
         raise SystemExit(f"No release artifacts found in {RELEASE_DIR}")
 

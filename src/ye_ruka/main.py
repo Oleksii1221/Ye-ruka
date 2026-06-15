@@ -20,7 +20,7 @@ def main() -> int:
     app = QApplication(sys.argv)
     app.setApplicationName("Є-Рука")
     app.setOrganizationName("Kico")
-    app.setApplicationVersion("2.2.0")
+    app.setApplicationVersion("2.2.1")
     app.setWindowIcon(QIcon(str(resource_path("resources", "icons", "ye-ruka.ico"))))
     config = ConfigManager(resource_path("config", "default_profile.json"))
     first_run = not config.path.exists()

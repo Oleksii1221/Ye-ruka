@@ -137,6 +137,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .download-panel { margin-top: 96px; padding-top: 56px; display: flex; align-items: end; justify-content: space-between; gap: 40px; border-top: 4px solid var(--orange); }
 .download-panel p:last-child { max-width: 670px; color: #aeb9c0; }
 .light-button { min-width: 210px; flex: 0 0 auto; }
+.download-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; }
+.light-secondary { border-color: #50606d; color: var(--white); min-width: 170px; }
 
 .requirements { max-width: var(--max); margin: 0 auto; padding: 100px 0; display: grid; grid-template-columns: .8fr 1.2fr; gap: 90px; }
 .requirements dl { margin: 0; border-top: 1px solid var(--line); }
@@ -188,6 +190,8 @@ footer > p { grid-column: 1 / -1; margin: 0; color: var(--muted); font-size: 12p
   .steps li { grid-template-columns: 62px 1fr; padding: 20px 0; }
   .steps li > span { width: 40px; height: 40px; }
   .download-panel { margin-top: 68px; flex-direction: column; align-items: stretch; }
+  .download-buttons { justify-content: stretch; }
+  .download-buttons a { flex: 1 1 100%; }
   .requirements dl div { grid-template-columns: 1fr; gap: 5px; padding: 16px 0; }
   footer { grid-template-columns: 1fr; }
 }
